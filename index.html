@@ -1,11 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melisa Sultan Kırpık</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Melisa Sultan Kırpık</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    
+  <header>
+    <a href="#" class="logo">Melisa</a>
+
+    <nav>
+      <a href="#" class="active">Ana Sayfa</a>
+      <a href="#">Çalışmalar</a>
+      <a href="#">Eğitim ve Yetenekler</a>
+      <a href="#">İletişim</a>
+    </nav>
+
+    <button id="theme-toggle" class="theme-toggle" aria-label="Tema Değiştir">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </header>
+
+  <section class="home">
+    <div class="home-img">
+      <img src="img/logo.jpg" alt="">
+    </div>
+    <div class="home-content">
+      <h1>Merhaba, ben <span>Melisa!</span></h1>
+      <h3 class="typing-text"><span></span></h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi fuga neque, nam quia modi saepe animi quas earum velit dicta beatae fugit voluptatibus cumque sunt ipsa id quidem nisi laudantium.</p>
+
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+
+      <a href="#" class="btn">İletişime Geç!</a>
+    </div>
+  </section>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark');
+    }
+
+    function updateIcon() {
+      if (document.body.classList.contains('dark')) {
+        themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+      } else {
+        themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+      }
+    }
+
+    updateIcon();
+
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      updateIcon();
+    });
+  </script>
 </body>
 </html>
