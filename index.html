@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Melisa Sultan Kırpık</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <header>
-    <a href="#" class="logo">Melisa</a>
+    <a href="#" class="logo" data-aos="zoom-in" data-aos-duration="1500">Melisa</a>
 
     <nav>
-      <a href="#" class="active">Ana Sayfa</a>
-      <a href="#">Çalışmalar</a>
-      <a href="#">Eğitim ve Yetenekler</a>
-      <a href="#">İletişim</a>
+      <a href=".home" class="active">Ana Sayfa</a>
+      <a href="#about">Hakkımda</a>
+      <a href="#skills">Yetenekler</a>
+      <a href="#services">Hizmetler</a>
+      <a href="#contact">İletişime Geç</a>
     </nav>
 
     <button id="theme-toggle" class="theme-toggle" aria-label="Tema Değiştir">
@@ -30,7 +34,8 @@
     <div class="home-content">
       <h1>Merhaba, ben <span>Melisa!</span></h1>
       <h3 class="typing-text"><span></span></h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi fuga neque, nam quia modi saepe animi quas earum velit dicta beatae fugit voluptatibus cumque sunt ipsa id quidem nisi laudantium.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi fuga neque, nam quia modi saepe animi quas
+        earum velit dicta beatae fugit voluptatibus cumque sunt ipsa id quidem nisi laudantium.</p>
 
       <div class="social-icons">
         <a href="#"><i class="fa-brands fa-linkedin"></i></a>
@@ -43,7 +48,185 @@
     </div>
   </section>
 
+  <section class="about" id="about">
+    <div class="content">
+      <div class="title"><span>Hakkımda</span></div>
+      <div class="about-details">
+        <div class="left">
+          <img src="img/logo.jpg" alt="">
+        </div>
+        <div class="right">
+          <div class="topic">Tasarım benim için bir tutku.</div>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut veniam dolor voluptates deserunt, obcaecati
+            earum hic autem dolorem praesentium unde quasi doloremque modi harum quam delectus quo commodi similique!
+            Vero.</p>
+          <div class="button">
+            <button>Cv'yi İndir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills" id="skills">
+    <div class="content">
+      <div class="title" id="skills-title"><span>Yetenekler</span></div>
+
+      <div class="skills-details">
+
+        <div class="text">
+          <div class="topic">Yeectenek Bilgileri</div>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi laboriosam
+            exercitationem esse beatae. Corrupti ipsam, aliquam reprehenderit molestiae eos impedit eius illum accusamus
+            quibusdam, deleniti libero eligendi dolor harum animi?</p>
+          <div class="experience">
+            <div class="num">10</div>
+            <div class="exp">Yıllık Deneyim</div>
+          </div>
+        </div>
+
+        <div class="boxes">
+          <div class="box">
+            <div class="topic">HTML</div>
+            <div class="per">90%</div>
+          </div>
+          <div class="box">
+            <div class="topic">HTML</div>
+            <div class="per">90%</div>
+          </div>
+          <div class="box">
+            <div class="topic">HTML</div>
+            <div class="per">90%</div>
+          </div>
+          <div class="box">
+            <div class="topic">HTML</div>
+            <div class="per">90%</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="services">
+      <div class="title"><span>Hizmetler</span></div>
+      <div class="boxes">
+        <div class="box">
+          <div class="icon">
+            <i class="fa fa-desktop"></i>
+          </div>
+          <div class="topic">Web Geliştirme</div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam repudiandae mollitia, nisi porro
+            perferendis eveniet architecto officiis, nostrum impedit, ipsa vitae aliquam odio nobis asperiores omnis
+            magnam! Laudantium, delectus distinctio.</p>
+        </div>
+        <div class="box">
+          <div class="icon">
+            <i class="fa fa-paint-brush"></i>
+          </div>
+          <div class="topic">Grafik Tasarım</div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam repudiandae mollitia, nisi porro
+            perferendis eveniet architecto officiis, nostrum impedit, ipsa vitae aliquam odio nobis asperiores omnis
+            magnam! Laudantium, delectus distinctio.</p>
+        </div>
+        <div class="box">
+          <div class="icon">
+            <i class="fa fa-paint-brush"></i>
+          </div>
+          <div class="topic">Grafik Tasarım</div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam repudiandae mollitia, nisi porro
+            perferendis eveniet architecto officiis, nostrum impedit, ipsa vitae aliquam odio nobis asperiores omnis
+            magnam! Laudantium, delectus distinctio.</p>
+        </div>
+        <div class="box">
+          <div class="icon">
+            <i class="fa fa-paint-brush"></i>
+          </div>
+          <div class="topic">Grafik Tasarım</div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam repudiandae mollitia, nisi porro
+            perferendis eveniet architecto officiis, nostrum impedit, ipsa vitae aliquam odio nobis asperiores omnis
+            magnam! Laudantium, delectus distinctio.</p>
+        </div>
+        <div class="box">
+          <div class="icon">
+            <i class="fa fa-paint-brush"></i>
+          </div>
+          <div class="topic">Grafik Tasarım</div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam repudiandae mollitia, nisi porro
+            perferendis eveniet architecto officiis, nostrum impedit, ipsa vitae aliquam odio nobis asperiores omnis
+            magnam! Laudantium, delectus distinctio.</p>
+        </div>
+        <div class="box">
+          <div class="icon">
+            <i class="fa fa-paint-brush"></i>
+          </div>
+          <div class="topic">Grafik Tasarım</div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam repudiandae mollitia, nisi porro
+            perferendis eveniet architecto officiis, nostrum impedit, ipsa vitae aliquam odio nobis asperiores omnis
+            magnam! Laudantium, delectus distinctio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="contact">
+      <div class="content">
+        <div class="title"><span>İletişime Geç</span></div>
+        <div class="text">
+          <div class="topic">Siteye mi ihtiyacın var?</div>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique, in quae temporibus possimus at nisi
+            molestiae, nam id numquam est repellendus aperiam, voluptate a excepturi quos voluptatem eveniet placeat
+            dignissimos.</p>
+          <div class="button">
+            <button>İletişim</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+  <div class="footer-container">
+    <div class="footer-logo">
+      <h2 class="logo">Melisa Sultan Kırpık</h2>
+    </div>
+    <div class="footer-links">
+      <a href="#home">Anasayfa</a>
+      <a href="#about">Hakkımda</a>
+      <a href="#skills">Yetenekler</a>
+      <a href="#services">Hizmetler</a>
+      <a href="#contact">İletişim</a>
+    </div>
+    <div class="footer-socials">
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+    <div class="footer-copy">
+      <span>&copy; 2025 MyPortfolio. Tüm hakları saklıdır.</span>
+    </div>
+  </div>
+</footer>
+
+
+
+
+  <!-- <footer>
+    <div class="text">
+      <a href="#">msk</a>
+      <span>tarafından oluşturuldu.</span>
+
+    </div>
+  </footer> -->
+
+
+
   <script>
+
     const themeToggle = document.getElementById('theme-toggle');
     const savedTheme = localStorage.getItem('theme');
 
@@ -67,6 +250,61 @@
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
       updateIcon();
     });
+
+    (function () {
+      const el = document.querySelector('.typing-text span');
+      if (!el) return;
+
+      const words = [
+        "Yazılım Mühendisiyim",
+        "Web Geliştiriciyim",
+        "Web Tasarımcıyım"
+      ];
+
+      const typingSpeed = 90;   // harf yazma hızı (ms)
+      const erasingSpeed = 40;  // harf silme hızı (ms)
+      const holdDelay = 1800;   // kelime tamamlandığında bekleme (ms)
+      const betweenWordsDelay = 500; // bir kelime silindikten sonra diğerine başlamadan önce bekleme
+
+      let wordIndex = 0;
+      let charIndex = 0;
+      let isErasing = false;
+
+      function typeLoop() {
+        const currentWord = words[wordIndex];
+        if (!isErasing) {
+          if (charIndex <= currentWord.length - 1) {
+            el.textContent += currentWord.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeLoop, typingSpeed);
+          } else {
+            // kelime tamamlandı
+            isErasing = true;
+            setTimeout(typeLoop, holdDelay);
+          }
+        } else {
+          if (charIndex > 0) {
+            el.textContent = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(typeLoop, erasingSpeed);
+          } else {
+            // silindi, diğer kelimeye geç
+            isErasing = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            setTimeout(typeLoop, betweenWordsDelay);
+          }
+        }
+      }
+
+      // başlangıç
+      setTimeout(typeLoop, 600);
+    })();
+  </script>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({offset:0});
   </script>
 </body>
+
 </html>
