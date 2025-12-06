@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Melisa Sultan Kırpık</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -15,19 +15,26 @@
     <a href="#" class="logo" data-aos="zoom-in" data-aos-duration="1500">Melisa</a>
 
     <nav>
-      <a href=".home" class="active">Ana Sayfa</a>
+      <a href="#home" class="active">Ana Sayfa</a>
       <a href="#about">Hakkımda</a>
       <a href="#skills">Yetenekler</a>
       <a href="#services">Hizmetler</a>
       <a href="#contact">İletişime Geç</a>
     </nav>
 
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+
     <button id="theme-toggle" class="theme-toggle" aria-label="Tema Değiştir">
       <i class="fa-solid fa-moon"></i>
     </button>
   </header>
 
-  <section class="home">
+
+  <section class="home" id="home">
     <div class="home-img">
       <img src="img/logo.jpg" alt="">
     </div>
@@ -189,28 +196,28 @@
 
 
   <footer>
-  <div class="footer-container">
-    <div class="footer-logo">
-      <h2 class="logo">Melisa Sultan Kırpık</h2>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h2 class="logo">Melisa Sultan Kırpık</h2>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Anasayfa</a>
+        <a href="#about">Hakkımda</a>
+        <a href="#skills">Yetenekler</a>
+        <a href="#services">Hizmetler</a>
+        <a href="#contact">İletişim</a>
+      </div>
+      <div class="footer-socials">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+      <div class="footer-copy">
+        <span>&copy; 2025 MyPortfolio. Tüm hakları saklıdır.</span>
+      </div>
     </div>
-    <div class="footer-links">
-      <a href="#home">Anasayfa</a>
-      <a href="#about">Hakkımda</a>
-      <a href="#skills">Yetenekler</a>
-      <a href="#services">Hizmetler</a>
-      <a href="#contact">İletişim</a>
-    </div>
-    <div class="footer-socials">
-      <a href="#"><i class="fa-brands fa-facebook"></i></a>
-      <a href="#"><i class="fa-brands fa-twitter"></i></a>
-      <a href="#"><i class="fa-brands fa-instagram"></i></a>
-      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-    </div>
-    <div class="footer-copy">
-      <span>&copy; 2025 MyPortfolio. Tüm hakları saklıdır.</span>
-    </div>
-  </div>
-</footer>
+  </footer>
 
 
 
@@ -225,86 +232,137 @@
 
 
 
-  <script>
+<script>
+/* ============================================
+   1) DARK MODE
+============================================ */
+const themeToggle = document.getElementById('theme-toggle');
+const savedTheme = localStorage.getItem('theme');
 
-    const themeToggle = document.getElementById('theme-toggle');
-    const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+  document.body.classList.add('dark');
+}
 
-    if (savedTheme === 'dark') {
-      document.body.classList.add('dark');
-    }
+function updateIcon() {
+  themeToggle.innerHTML = document.body.classList.contains('dark')
+    ? '<i class="fa-solid fa-sun"></i>'
+    : '<i class="fa-solid fa-moon"></i>';
+}
+updateIcon();
 
-    function updateIcon() {
-      if (document.body.classList.contains('dark')) {
-        themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  const isDark = document.body.classList.contains('dark');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  updateIcon();
+});
+
+
+/* ============================================
+   2) TYPING EFFECT
+============================================ */
+(function () {
+  const el = document.querySelector('.typing-text span');
+  if (!el) return;
+
+  const words = ["Yazılım Mühendisiyim", "Web Geliştiriciyim", "Web Tasarımcıyım"];
+  const typingSpeed = 90;
+  const erasingSpeed = 40;
+  const holdDelay = 1800;
+  const betweenWordsDelay = 500;
+
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isErasing = false;
+
+  function typeLoop() {
+    const currentWord = words[wordIndex];
+    if (!isErasing) {
+      if (charIndex < currentWord.length) {
+        el.textContent += currentWord.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeLoop, typingSpeed);
       } else {
-        themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        isErasing = true;
+        setTimeout(typeLoop, holdDelay);
+      }
+    } else {
+      if (charIndex > 0) {
+        el.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(typeLoop, erasingSpeed);
+      } else {
+        isErasing = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(typeLoop, betweenWordsDelay);
       }
     }
+  }
 
-    updateIcon();
+  setTimeout(typeLoop, 600);
+})();
 
-    themeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      const isDark = document.body.classList.contains('dark');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      updateIcon();
-    });
 
-    (function () {
-      const el = document.querySelector('.typing-text span');
-      if (!el) return;
+/* ============================================
+   3) BURGER MENU
+============================================ */
+const burger = document.querySelector('.burger');
+const nav = document.querySelector('nav');
 
-      const words = [
-        "Yazılım Mühendisiyim",
-        "Web Geliştiriciyim",
-        "Web Tasarımcıyım"
-      ];
+if (burger && nav) {
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    burger.classList.toggle('toggle');
 
-      const typingSpeed = 90;   // harf yazma hızı (ms)
-      const erasingSpeed = 40;  // harf silme hızı (ms)
-      const holdDelay = 1800;   // kelime tamamlandığında bekleme (ms)
-      const betweenWordsDelay = 500; // bir kelime silindikten sonra diğerine başlamadan önce bekleme
+    // menü açıldığında header gizlenmesin
+    header.classList.remove("header-hidden");
+  });
+}
 
-      let wordIndex = 0;
-      let charIndex = 0;
-      let isErasing = false;
 
-      function typeLoop() {
-        const currentWord = words[wordIndex];
-        if (!isErasing) {
-          if (charIndex <= currentWord.length - 1) {
-            el.textContent += currentWord.charAt(charIndex);
-            charIndex++;
-            setTimeout(typeLoop, typingSpeed);
-          } else {
-            // kelime tamamlandı
-            isErasing = true;
-            setTimeout(typeLoop, holdDelay);
-          }
-        } else {
-          if (charIndex > 0) {
-            el.textContent = currentWord.substring(0, charIndex - 1);
-            charIndex--;
-            setTimeout(typeLoop, erasingSpeed);
-          } else {
-            // silindi, diğer kelimeye geç
-            isErasing = false;
-            wordIndex = (wordIndex + 1) % words.length;
-            setTimeout(typeLoop, betweenWordsDelay);
-          }
-        }
-      }
+/* ============================================
+   4) SCROLL — HEADER GİZLE/GÖSTER (ÇAKIŞMASIZ)
+============================================ */
+const header = document.querySelector("header");
+let lastScrollTop = 0;
+let isTicking = false;
 
-      // başlangıç
-      setTimeout(typeLoop, 600);
-    })();
-  </script>
+function handleScroll() {
+  const current = window.pageYOffset || document.documentElement.scrollTop;
 
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({offset:0});
-  </script>
+  // Menü açıksa header gizlenmesin
+  const menuOpen = nav && nav.classList.contains("active");
+
+  if (!menuOpen) {
+    if (current > lastScrollTop && current > 10) {
+      // ↓ AŞAĞI KAYDIRIYOR → GİZLE
+      header.style.top = "-120px";
+    } else {
+      // ↑ YUKARI KAYDIRIYOR → GÖSTER
+      header.style.top = "0";
+    }
+  }
+
+  lastScrollTop = current <= 0 ? 0 : current;
+  isTicking = false;
+}
+
+window.addEventListener("scroll", () => {
+  if (!isTicking) {
+    window.requestAnimationFrame(handleScroll);
+    isTicking = true;
+  }
+});
+
+
+/* ============================================
+   5) AOS
+============================================ */
+AOS.init({ offset: 0 });
+
+</script>
+
+
 </body>
 
 </html>

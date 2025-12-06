@@ -44,7 +44,7 @@ body {
 }
 
 header {
-    position: static;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -54,6 +54,7 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+     transition: top 0.4s ease;
 }
 
 .logo {
@@ -90,17 +91,18 @@ nav a.active {
 
 @media(max-width:995px) {
     nav {
-        position: absolute;
+        position: fixed;
+        z-index: 1001;
         display: none;
         top: 0;
         right: 0;
         width: 40%;
-        border-left: 3px solid #b74b4b;
-        border-bottom: 3px solid #b74b4b;
+        border-left: 3px solid #3E5F44;
+        border-bottom: 3px solid #3E5F44;
         border-bottom-left-radius: 2rem;
-        padding: 1rem solid;
-        background-color: #161616;
-        border-top: 0.1rem solid rgb(0, 0, 0, 0.1);
+          padding: 2rem 1.5rem;
+        background-color: #3E5F44;
+        /* border-top: 0.1rem solid rgb(0, 0, 0, 0.1); */
     }
 
     nav.active {
@@ -109,18 +111,63 @@ nav a.active {
 
     nav a {
         display: block;
-        font-size: 2.6rem;
+        color: #E8FFD7;
+        font-size: 14px;
         margin: 1rem 0;
     }
 
     nav a:hover,
     nav a.active {
         padding: 1rem;
-        border-radius: 0.5rem;
-        border-bottom: 0.5rem solid #b74b4b;
+        color: #E8FFD7;
+        border-radius: 0.1rem;
+        border-bottom: 0.1rem solid #E8FFD7;
     }
 
 }
+
+/* Burger Menü Stili */
+.burger {
+    display: none; /* Masaüstünde gizli */
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 25px;
+    width: 30px;
+}
+
+.burger div {
+    width: 100%;
+    height: 3px;
+    background-color: #3E5F44;
+    transition: all 0.3s ease;
+}
+
+/* Burger animasyonu */
+.burger.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger.toggle .line2 {
+    opacity: 0;
+}
+
+.burger.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Mobilde burger menüyü göster */
+@media(max-width: 995px) {
+    .burger {
+        display: flex;
+    }
+}
+
+body.dark .burger div {
+    background-color: #E8FFD7; 
+}
+
+
 
 .theme-toggle {
     width: 50px;
@@ -1053,11 +1100,11 @@ body.dark footer .footer-copy span a:hover {
     display: none;
    }
 
-   .hamburg,
+   /* .hamburg,
    .cancel{
     opacity: 1;
     pointer-events: visible;
-   }
+   } */
 
    .main-container .content{
     margin-top: 20px;
